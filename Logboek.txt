@@ -1,0 +1,38 @@
+
+
+
+Extracting all tweets of 10-2019: s4410653@karora:~/IWO-map-naam$ zless /net/corpora/twitter2/Tweets/2019/10/*.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location > tweets_10_2019.txt
+Copy to local server: scp s4410653@karora.let.rug.nl:IWO-map-naam/tweets_10_2019.txt /mnt/c/Users/sijbr/OneDrive/Documenten/NotePad++/Inleiding_WO/IWO-Final-Project
+Controlling if extracted correctly: cat tweets_10_2019.txt | tail compared with s4410653@karora:/net/corpora/twitter2/Tweets/2019/10$ zless /net/corpora/twitter2/Tweets/2019/10/20191031\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail
+
+Extracting all tweets of 02-2020: s4410653@karora:~/IWO-map-naam$ zless /net/corpora/twitter2/Tweets/2020/02/*.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location > tweets_02_2020.txt
+Copy to local server: scp s4410653@karora.let.rug.nl:IWO-map-naam/tweets_02_2020.txt /mnt/c/Users/sijbr/OneDrive/Documenten/NotePad++/Inleiding_WO/IWO-Final-Project
+Controlling if extracted correctly: cat tweets_02_2020.txt | tail compared with s4410653@karora:/net/corpora/twitter2/Tweets/2020/02$ zless /net/corpora/twitter2/Tweets/2020/02/20200229\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail
+
+Extracting all tweets of 07-2020: s4410653@karora:~/IWO-map-naam$ zless /net/corpora/twitter2/Tweets/2020/07/*.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location > tweets_07_2020.txt
+Copy to local server: scp s4410653@karora.let.rug.nl:IWO-map-naam/tweets_07_2020.txt /mnt/c/Users/sijbr/OneDrive/Documenten/NotePad++/Inleiding_WO/IWO-Final-Project
+Controlling if extracted correctly: cat tweets_07_2020.txt compared with s4410653@karora:/net/corpora/twitter2/Tweets/2020/07$ zless /net/corpora/twitter2/Tweets/2020/07/20200731\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail
+
+Data cleaning:
+Changed text to lowercase, removed links, normalized the text (removed: tags, hastags and smileys), removed punctuations. 
+
+Installations:
+Install of spacy: pip3 install -U pip setuptools wheel
+				  pip3 install -U spacy 
+				  python3 -m spacy download nl_core_news_lg 
+				  python3 -m spacy download en_core_web_trf
+#Install of nltk:  pip3 install --user -U nltk
+#				  python3 -m nltk.downloader stopwords
+Install of text-preprocessing: (python 3.7 and 3.8)
+				  pip3 install text-preprocessing
+Install of jupyter:
+				  pip3 install notebook
+				  
+Converting text file(.txt) to comma separated file(.csv):
+cat all_tweets_RS.txt | tr -s '\t' ',' > all_tweets_RS2.txt
+cat all_tweets_not_RS.txt | tr -s '\t' ',' > all_tweets_not_RS2.txt
+
+Inserting column titel:
+Open all_tweets_RS2 -> make sure the flickering '|' is on the left side of line 1 -> press enter and go back to line 1 -> type 'Tweets,Locatie' (without the '') -> save the file
+Open all_tweets_not_RS2 -> make sure the flickering '|' is on the left side of line 1 -> press enter and go back to line 1 -> type 'Tweets,Locatie' (without the '') -> save the file
+
