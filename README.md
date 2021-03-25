@@ -31,11 +31,11 @@ Copy to local server 07-2020: scp <S_number>@karora.let.rug.nl:<name_of_director
 ## If you want to control if the extraction went well:
 In Linux shell (the path of the terminal has to lead to the same folder where the textfiles are located):
 
-Compare cat tweets_10_2019.txt | tail with <S_number>@karora:/net/corpora/twitter2/Tweets/2019/10$ zless /net/corpora/twitter2/Tweets/2019/10/20191031\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail
+Compare 'cat tweets_10_2019.txt | tail' with '<S_number>@karora:/net/corpora/twitter2/Tweets/2019/10$ zless /net/corpora/twitter2/Tweets/2019/10/20191031\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail'
 
-Compare cat tweets_02_2020.txt | tail with <S_number>@karora:/net/corpora/twitter2/Tweets/2020/02$ zless /net/corpora/twitter2/Tweets/2020/02/20200229\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail
+Compare 'cat tweets_02_2020.txt | tail' with '<S_number>@karora:/net/corpora/twitter2/Tweets/2020/02$ zless /net/corpora/twitter2/Tweets/2020/02/20200229\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail'
 
-Compare cat tweets_07_2020.txt | tail with <S_number>@karora:/net/corpora/twitter2/Tweets/2020/07$ zless /net/corpora/twitter2/Tweets/2020/07/20200731\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail
+Compare 'cat tweets_07_2020.txt | tail' with <S_number>@karora:/net/corpora/twitter2/Tweets/2020/07$ zless /net/corpora/twitter2/Tweets/2020/07/20200731\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail'
 
 # steps to follow before executing clean_data.py
 ## Installations:
@@ -54,6 +54,8 @@ python3 clean_data.py tweets_02_2020.txt Randstad_plaatsnamen.json Niet-Randstad
 
 python3 clean_data.py tweets_07_2020.txt Randstad_plaatsnamen.json Niet-Randstad_plaatsnamen.json
 
+NOTE: the code uses an append method to concatenate the files, so if something goes wrong during running the code start all over(delete the created files).
+
 # Steps to follow after executing clean_data.py
 Converting text file(.txt) to comma separated file(.csv) in the terminal (the path of the terminal has to lead to the same folder where the textfiles are located):
 
@@ -61,12 +63,10 @@ cat all_tweets_RS.txt | tr -s '\t' ',' > all_tweets_RS2.txt
 
 cat all_tweets_not_RS.txt | tr -s '\t' ',' > all_tweets_not_RS2.txt
 
-NOTE: the code uses an append method to concatenate the files, so if something goes wrong during running the code start all over(delete the created files).
-
 ## Inserting column titel:
-Open all_tweets_RS2 in a text editor -> make sure the flickering '|' is on the far left side of line 1 -> press enter and go back to line 1 (far left) -> type 'Tweets,Locatie' (without the '') -> save the file
+Open 'all_tweets_RS2' in a text editor -> make sure the flickering '|' is on the far left side of line 1 -> press enter and go back to line 1 (far left) -> type 'Tweets,Locatie' (without the '') -> save the file
 
-Open all_tweets_not_RS2 in a text editor-> make sure the flickering '|' is on the far left side of line 1 -> press enter and go back to line 1 (far left) -> type 'Tweets,Locatie' (without the '') -> save the file
+Open 'all_tweets_not_RS2' in a text editor-> make sure the flickering '|' is on the far left side of line 1 -> press enter and go back to line 1 (far left) -> type 'Tweets,Locatie' (without the '') -> save the file
 
 # Code used to show results
 ## In the Linux shell:
