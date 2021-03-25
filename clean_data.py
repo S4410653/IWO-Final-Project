@@ -1,11 +1,9 @@
-<<<<<<< HEAD
+
 #Filename: clean_data.py
 #Description: This program preprocesses the text given and checks whether the user is or is not from the Randstad,
 #using the given word lists with json extension. The input comes from the Linux shell.
-=======
 #Filename: clean_text.py
 #Description: Removes all prefixes. 
->>>>>>> cd980e8ee1671032f5cbe99a6584b21a319b90e3
 #Author: Sijbren van vaals
 
 import sys
@@ -20,13 +18,10 @@ def preprocessed_text(text):
 	for line in text:
 		
 		line = to_lower(line)
-<<<<<<< HEAD
 		line = re.sub(r"http\S+", "", line) # Searches for URLs add replaces it with nothing
 		line = normalize_unicode(line) # Converts the characters to normal unicode (e.g. é to e), this also removes tags, hastags and smileys
-=======
 		line = re.sub(r"http\S+", "", line)
 		line = normalize_unicode(line)
->>>>>>> cd980e8ee1671032f5cbe99a6584b21a319b90e3
 		line = remove_punctuation(line)
 		clean_text.append(''.join(line))
 	clean_text[-1] = clean_text[-1] + "\n" # Last item does not have a '\n' so here we add one,
@@ -37,7 +32,6 @@ def check_in_wordlist(text, wordfile_RS, wordfile_not_RS):
 	"""This functions checks whether the sender of the tweet lives in one of the relevant places"""
 	tweets_RS = []
 	tweets_not_RS = []
-<<<<<<< HEAD
 	user_location = re.compile(r"   +(.*)$") # The line so the Tweet can be splitted from the user location on a tab. It was automatically converted to four spaces, sometimes three spaces between the text and the user location. That is why I chose for three or more spaces
 	for place_names in wordfile_RS.values(): # check if sender of the Tweet lives in the Randstad
 		for place_name in place_names:
@@ -60,7 +54,7 @@ def check_in_wordlist(text, wordfile_RS, wordfile_not_RS):
 				else:
 					location = "" # If there was no tab to split on (i.e. no user location) give empty string as user location
 				index = location.find(place_name)
-=======
+
 	for place_names in wordfile_RS.values(): # check if sender of tweet lives in the Randstad
 		for place_name in place_names:
 			for sentence in text:
@@ -72,12 +66,11 @@ def check_in_wordlist(text, wordfile_RS, wordfile_not_RS):
 		for place_name in place_names:
 			for sentence in text:
 				index = sentence.find(place_name)
->>>>>>> cd980e8ee1671032f5cbe99a6584b21a319b90e3
 				if index != -1:
 					tweets_not_RS.append(sentence)
 
 	return tweets_RS, tweets_not_RS
-<<<<<<< HEAD
+
 
 def main(argv):
 
@@ -105,7 +98,7 @@ def main(argv):
 	else:
 		print("Usage: {}, please give five commands. Interpreter, Python file, text file, wordlist Randstad and wordlist not Randstad.".format(argv[0], file=sys.stderr))
 		exit(-1)
-=======
+
 	
 def main(argv):
 
@@ -129,7 +122,6 @@ def main(argv):
 	for line in relevant_text[1]:
 		f.write(line)
 	f.close() 
->>>>>>> cd980e8ee1671032f5cbe99a6584b21a319b90e3
 	
 
 if __name__ == "__main__":
