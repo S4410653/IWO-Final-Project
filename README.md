@@ -1,10 +1,15 @@
 
 # Introduction
 In this GitHub repository you will find the following files: clean_data.py, Randstad_plaatsnamen.json, Niet-Randstad_plaatsnamen and iwo_Final_Project.ipynb.
+
 All other files than these can be ignored. 
+
 Randstad_plaatsnamen.json contains all the city names of the cities and villages of the Randstad.
+
 Niet-Randstad_plaatsnamen.josn contains all the city names of the cities and villages not in the Randstad.
+
 iwo_Final_Project.ipynb contains the code to search for the amount of occurrences of 'tractor' and 'trekker' in the separated text files and the contingency matrix.
+
 clean_data.py inside the file you can find the explanation of the code.
 
 # How to get the data
