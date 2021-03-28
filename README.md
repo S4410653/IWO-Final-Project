@@ -20,14 +20,14 @@ Extracting all tweets of 02-2020: <S_number>@karora:~/<name_of_directory>$ zless
 Extracting all tweets of 07-2020: <S_number>@karora:~/<name_of_directory>$ zless /net/corpora/twitter2/Tweets/2020/07/*.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location > tweets_07_2020.txt
 
 ## In Linux shell:
-Copy to local server 10-2019: scp <S_number>@karora.let.rug.nl:<name_of_directory>/tweets_10_2019.txt Fill in here the path to where you want to save the file (/mnt/c/Users/) 
+Copy to local server 10-2019: scp <S_number>@karora.let.rug.nl:<name_of_directory>/tweets_10_2019.txt <Fill in here the path to where you want to save the file> (/mnt/c/Users/) 
 
-Copy to local server 02-2020: scp <S_number>@karora.let.rug.nl:<name_of_directory>/tweets_02_2020.txt Fill in here the path to where you want to save the file (/mnt/c/Users/) 
+Copy to local server 02-2020: scp <S_number>@karora.let.rug.nl:<name_of_directory>/tweets_02_2020.txt <Fill in here the path to where you want to save the file> (/mnt/c/Users/) 
 
-Copy to local server 07-2020: scp <S_number>@karora.let.rug.nl:<name_of_directory>/tweets_07_2020.txt Fill in here the path to where you want to save the file (/mnt/c/Users/) 
+Copy to local server 07-2020: scp <S_number>@karora.let.rug.nl:<name_of_directory>/tweets_07_2020.txt <Fill in here the path to where you want to save the file> (/mnt/c/Users/) 
 
 # If you want to control if the extraction went well:
-##In Linux shell (the path of the terminal has to lead to the same folder where the textfiles are located):
+## In Linux shell (the path of the terminal has to lead to the same folder where the textfiles are located):
 
 Compare 'cat tweets_10_2019.txt | tail' with '<S_number>@karora:/net/corpora/twitter2/Tweets/2019/10$ zless /net/corpora/twitter2/Tweets/2019/10/20191031\:23.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | tail'
 
